@@ -130,7 +130,7 @@ public final class LightingServiceGrpc {
       fullMethodName = SERVICE_NAME + '/' + "changeLightingLevel",
       requestType = lighting.IntRequest.class,
       responseType = lighting.StringResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<lighting.IntRequest,
       lighting.StringResponse> getChangeLightingLevelMethod() {
     io.grpc.MethodDescriptor<lighting.IntRequest, lighting.StringResponse> getChangeLightingLevelMethod;
@@ -139,7 +139,7 @@ public final class LightingServiceGrpc {
         if ((getChangeLightingLevelMethod = LightingServiceGrpc.getChangeLightingLevelMethod) == null) {
           LightingServiceGrpc.getChangeLightingLevelMethod = getChangeLightingLevelMethod = 
               io.grpc.MethodDescriptor.<lighting.IntRequest, lighting.StringResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "lighting.LightingService", "changeLightingLevel"))
               .setSampledToLocalTracing(true)
@@ -205,9 +205,9 @@ public final class LightingServiceGrpc {
 
     /**
      */
-    public void changeLightingLevel(lighting.IntRequest request,
+    public io.grpc.stub.StreamObserver<lighting.IntRequest> changeLightingLevel(
         io.grpc.stub.StreamObserver<lighting.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeLightingLevelMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getChangeLightingLevelMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -235,7 +235,7 @@ public final class LightingServiceGrpc {
                   this, METHODID_CHANGE_LIGHTS_SETTING)))
           .addMethod(
             getChangeLightingLevelMethod(),
-            asyncUnaryCall(
+            asyncClientStreamingCall(
               new MethodHandlers<
                 lighting.IntRequest,
                 lighting.StringResponse>(
@@ -288,10 +288,10 @@ public final class LightingServiceGrpc {
 
     /**
      */
-    public void changeLightingLevel(lighting.IntRequest request,
+    public io.grpc.stub.StreamObserver<lighting.IntRequest> changeLightingLevel(
         io.grpc.stub.StreamObserver<lighting.StringResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getChangeLightingLevelMethod(), getCallOptions()), request, responseObserver);
+      return asyncClientStreamingCall(
+          getChannel().newCall(getChangeLightingLevelMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -332,13 +332,6 @@ public final class LightingServiceGrpc {
     public lighting.StringResponse changeLightsSetting(lighting.LightsSetting request) {
       return blockingUnaryCall(
           getChannel(), getChangeLightsSettingMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public lighting.StringResponse changeLightingLevel(lighting.IntRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getChangeLightingLevelMethod(), getCallOptions(), request);
     }
   }
 
@@ -383,14 +376,6 @@ public final class LightingServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getChangeLightsSettingMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<lighting.StringResponse> changeLightingLevel(
-        lighting.IntRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getChangeLightingLevelMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_TURN_ON_LIGHTS = 0;
@@ -427,10 +412,6 @@ public final class LightingServiceGrpc {
           serviceImpl.changeLightsSetting((lighting.LightsSetting) request,
               (io.grpc.stub.StreamObserver<lighting.StringResponse>) responseObserver);
           break;
-        case METHODID_CHANGE_LIGHTING_LEVEL:
-          serviceImpl.changeLightingLevel((lighting.IntRequest) request,
-              (io.grpc.stub.StreamObserver<lighting.StringResponse>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -441,6 +422,9 @@ public final class LightingServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CHANGE_LIGHTING_LEVEL:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.changeLightingLevel(
+              (io.grpc.stub.StreamObserver<lighting.StringResponse>) responseObserver);
         default:
           throw new AssertionError();
       }

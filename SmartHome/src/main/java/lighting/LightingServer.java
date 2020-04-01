@@ -15,7 +15,7 @@ public class LightingServer extends LightingServiceImplBase {
 	String lightResponse;
 	private LightsSetting.Setting setting;
 	private StringResponse response;
-	int lightningLevel = 0;
+	int currentLightning = 50;
 	private static final Logger logger = Logger.getLogger(LightingServer.class.getName());
 	public static void main(final String args[]) throws IOException , InterruptedException {
 	LightingServer lightingServer = new LightingServer();
@@ -62,13 +62,51 @@ public void changeLightsSetting(LightsSetting request, StreamObserver<StringResp
     responseObserver.onCompleted();
 }
 
+
 @Override
-public void changeLightingLevel(IntRequest request, StreamObserver<StringResponse> responseObserver) {
-	lightningLevel = request.getValue();
-	System.out.println(lightningLevel);
-    response = StringResponse.newBuilder().setText("Lightning level has been changed").build();
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+public StreamObserver<IntRequest> changeLightingLevel (final StreamObserver<StringResponse> responseObserver) {
+
+	return new StreamObserver<IntRequest>() {
+		int newLightning;
+
+		@Override
+		public void onNext(IntRequest value) {
+			
+			String message;
+			if(value.getValue() < currentLightning) {
+				newLightning = value.getValue();
+				message = "Lighting decreased to" + newLightning;
+				
+			}
+			else if(value.getValue() > currentLightning) {
+				newLightning = value.getValue();
+				message = "Lightning increased to" + newLightning;
+	
+			}
+			else {
+				message = "You have not changed the lightning level";
+			}
+            responseObserver.onNext(StringResponse.newBuilder().setText(message).build());
+            System.out.print(message);
+          
+		}
+
+		@Override
+		public void onError(Throwable t) {
+			t.printStackTrace();
+			
+		}
+
+		@Override
+		public void onCompleted() {
+            responseObserver.onCompleted();
+			
+		}
+		
+		
+	};
+	
+	
 }
 }
 

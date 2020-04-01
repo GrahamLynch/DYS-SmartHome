@@ -54,14 +54,14 @@ public final class Lighting {
       "EEN\020\001\022\007\n\003RED\020\002\022\014\n\010ORIGINAL\020\003\"\034\n\013IntRespo" +
       "nse\022\r\n\005value\030\001 \001(\005\"\033\n\nIntRequest\022\r\n\005valu" +
       "e\030\001 \001(\005\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(\t\"" +
-      "\007\n\005Empty2\231\002\n\017LightingService\0229\n\014turnOnLi" +
+      "\007\n\005Empty2\233\002\n\017LightingService\0229\n\014turnOnLi" +
       "ghts\022\017.lighting.Empty\032\030.lighting.StringR" +
       "esponse\022:\n\rturnOffLights\022\017.lighting.Empt" +
       "y\032\030.lighting.StringResponse\022H\n\023changeLig" +
       "htsSetting\022\027.lighting.LightsSetting\032\030.li" +
-      "ghting.StringResponse\022E\n\023changeLightingL" +
+      "ghting.StringResponse\022G\n\023changeLightingL" +
       "evel\022\024.lighting.IntRequest\032\030.lighting.St" +
-      "ringResponseB\002P\001b\006proto3"
+      "ringResponse(\001B\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
