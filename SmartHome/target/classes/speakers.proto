@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package speakers;
+
+service SpeakersService{
+
+rpc getCurrentVolume(Empty) returns (IntResponse);
+rpc setCurrentVolume(IntRequest) returns (StringResponse);
+rpc changeSpeakersSetting(SpeakersSetting) returns (StringResponse);
+rpc turnOnSpeakers(Empty) returns (StringResponse);
+}
+
+message IntResponse{
+	int32 value = 1;
+}
+
+message IntRequest{
+    int32 value = 1;
+}
+
+message StringResponse{
+	string text = 1;
+}
+
+message SpeakersSetting{
+    enum Setting {
+        CINEMA = 0;
+        SPORTS = 1;
+        MUSIC = 2;
+    }
+}
+
+message Empty{}
