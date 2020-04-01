@@ -18,6 +18,7 @@ message LightsSetting{
         RED = 2;
         ORIGINAL = 3;
     }
+     Setting setting = 1;
 }
 
 message IntResponse{

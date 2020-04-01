@@ -48,19 +48,20 @@ public final class Lighting {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016lighting.proto\022\010lighting\"F\n\rLightsSett" +
-      "ing\"5\n\007Setting\022\010\n\004BLUE\020\000\022\t\n\005GREEN\020\001\022\007\n\003R" +
-      "ED\020\002\022\014\n\010ORIGINAL\020\003\"\034\n\013IntResponse\022\r\n\005val" +
-      "ue\030\001 \001(\005\"\033\n\nIntRequest\022\r\n\005value\030\001 \001(\005\"\036\n" +
-      "\016StringResponse\022\014\n\004text\030\001 \001(\t\"\007\n\005Empty2\231" +
-      "\002\n\017LightingService\0229\n\014turnOnLights\022\017.lig" +
-      "hting.Empty\032\030.lighting.StringResponse\022:\n" +
-      "\rturnOffLights\022\017.lighting.Empty\032\030.lighti" +
-      "ng.StringResponse\022H\n\023changeLightsSetting" +
-      "\022\027.lighting.LightsSetting\032\030.lighting.Str" +
-      "ingResponse\022E\n\023changeLightingLevel\022\024.lig" +
-      "hting.IntRequest\032\030.lighting.StringRespon" +
-      "seB\002P\001b\006proto3"
+      "\n\016lighting.proto\022\010lighting\"x\n\rLightsSett" +
+      "ing\0220\n\007setting\030\001 \001(\0162\037.lighting.LightsSe" +
+      "tting.Setting\"5\n\007Setting\022\010\n\004BLUE\020\000\022\t\n\005GR" +
+      "EEN\020\001\022\007\n\003RED\020\002\022\014\n\010ORIGINAL\020\003\"\034\n\013IntRespo" +
+      "nse\022\r\n\005value\030\001 \001(\005\"\033\n\nIntRequest\022\r\n\005valu" +
+      "e\030\001 \001(\005\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(\t\"" +
+      "\007\n\005Empty2\231\002\n\017LightingService\0229\n\014turnOnLi" +
+      "ghts\022\017.lighting.Empty\032\030.lighting.StringR" +
+      "esponse\022:\n\rturnOffLights\022\017.lighting.Empt" +
+      "y\032\030.lighting.StringResponse\022H\n\023changeLig" +
+      "htsSetting\022\027.lighting.LightsSetting\032\030.li" +
+      "ghting.StringResponse\022E\n\023changeLightingL" +
+      "evel\022\024.lighting.IntRequest\032\030.lighting.St" +
+      "ringResponseB\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -79,7 +80,7 @@ public final class Lighting {
     internal_static_lighting_LightsSetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_lighting_LightsSetting_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Setting", });
     internal_static_lighting_IntResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_lighting_IntResponse_fieldAccessorTable = new

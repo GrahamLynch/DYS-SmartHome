@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LightsSetting() {
+    setting_ = 0;
   }
 
   @java.lang.Override
@@ -31,6 +32,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -41,6 +43,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+            int rawValue = input.readEnum();
+
+            setting_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -189,6 +197,23 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:lighting.LightsSetting.Setting)
   }
 
+  public static final int SETTING_FIELD_NUMBER = 1;
+  private int setting_;
+  /**
+   * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+   */
+  public int getSettingValue() {
+    return setting_;
+  }
+  /**
+   * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+   */
+  public lighting.LightsSetting.Setting getSetting() {
+    @SuppressWarnings("deprecation")
+    lighting.LightsSetting.Setting result = lighting.LightsSetting.Setting.valueOf(setting_);
+    return result == null ? lighting.LightsSetting.Setting.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -203,6 +228,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (setting_ != lighting.LightsSetting.Setting.BLUE.getNumber()) {
+      output.writeEnum(1, setting_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -212,6 +240,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (setting_ != lighting.LightsSetting.Setting.BLUE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, setting_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -228,6 +260,7 @@ private static final long serialVersionUID = 0L;
     lighting.LightsSetting other = (lighting.LightsSetting) obj;
 
     boolean result = true;
+    result = result && setting_ == other.setting_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -239,6 +272,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + SETTING_FIELD_NUMBER;
+    hash = (53 * hash) + setting_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,6 +407,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      setting_ = 0;
+
       return this;
     }
 
@@ -398,6 +435,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public lighting.LightsSetting buildPartial() {
       lighting.LightsSetting result = new lighting.LightsSetting(this);
+      result.setting_ = setting_;
       onBuilt();
       return result;
     }
@@ -446,6 +484,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(lighting.LightsSetting other) {
       if (other == lighting.LightsSetting.getDefaultInstance()) return this;
+      if (other.setting_ != 0) {
+        setSettingValue(other.getSettingValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -472,6 +513,51 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int setting_ = 0;
+    /**
+     * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+     */
+    public int getSettingValue() {
+      return setting_;
+    }
+    /**
+     * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+     */
+    public Builder setSettingValue(int value) {
+      setting_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+     */
+    public lighting.LightsSetting.Setting getSetting() {
+      @SuppressWarnings("deprecation")
+      lighting.LightsSetting.Setting result = lighting.LightsSetting.Setting.valueOf(setting_);
+      return result == null ? lighting.LightsSetting.Setting.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+     */
+    public Builder setSetting(lighting.LightsSetting.Setting value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      setting_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.lighting.LightsSetting.Setting setting = 1;</code>
+     */
+    public Builder clearSetting() {
+      
+      setting_ = 0;
+      onChanged();
       return this;
     }
     @java.lang.Override
