@@ -18,6 +18,7 @@ speakers\SpeakersServiceGrpc$SpeakersServiceFileDescriptorSupplier.class
 lighting\Lighting$1.class
 speakers\EmptyOrBuilder.class
 heating\HeatingServiceGrpc$HeatingServiceBaseDescriptorSupplier.class
+lighting\LightingServer$1.class
 heating\IntRequest$1.class
 speakers\SpeakersSetting$Setting.class
 heating\HeatingServiceGrpc$HeatingServiceStub.class
@@ -25,6 +26,7 @@ heating\IntResponse$Builder.class
 lighting\Empty$Builder.class
 speakers\SpeakersSetting$Setting$1.class
 speakers\SpeakersServiceGrpc$SpeakersServiceImplBase.class
+lighting\LightingClient$1.class
 smarttv\IntRequest$1.class
 speakers\IntRequest.class
 heating\StringResponseOrBuilder.class

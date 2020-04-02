@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 public class LightingServer extends LightingServiceImplBase {
 	String lightStatus;
 	String lightResponse;
-	private LightsSetting.Setting setting;
 	private StringResponse response;
 	int currentLightning = 50;
 	private static final Logger logger = Logger.getLogger(LightingServer.class.getName());
@@ -53,13 +52,16 @@ public void turnOffLights(final Empty request,final StreamObserver<StringRespons
 	responseObserver.onCompleted();
 }
 
-@Override
-public void changeLightsSetting(LightsSetting request, StreamObserver<StringResponse> responseObserver) {
-    setting = request.getSetting();
-    System.out.println(setting);
-    response = StringResponse.newBuilder().setText("Lights seetting has been changed to" + setting).build();
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+
+@Override	
+public void changeLightColour(final Empty request,final StreamObserver<StringResponse> responseObserver) {
+	lightResponse = "The lights have changed colour!";
+	
+	StringResponse response = StringResponse.newBuilder()
+            .setText(lightResponse)
+            .build();
+	responseObserver.onNext(response);
+	responseObserver.onCompleted();
 }
 
 
@@ -104,9 +106,9 @@ public StreamObserver<IntRequest> changeLightingLevel (final StreamObserver<Stri
 		}
 		
 		
-	};
-	
-	
+	};	
 }
+
+
 }
 

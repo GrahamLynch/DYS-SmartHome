@@ -8,6 +8,7 @@ service LightingService{
 rpc turnOnLights(Empty) returns (StringResponse);
 rpc turnOffLights(Empty) returns (StringResponse);
 rpc changeLightsSetting(LightsSetting) returns (StringResponse);
+rpc changeLightColour(Empty) returns (StringResponse);
 rpc changeLightingLevel(stream IntRequest) returns (StringResponse);
 }
 

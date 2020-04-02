@@ -7,6 +7,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
+import lighting.LightsSetting.Setting;
 
 public class LightingClient{
 
@@ -15,6 +16,7 @@ public class LightingClient{
 	private static LightingServiceGrpc.LightingServiceStub asyncStub;
     private static LightingServiceGrpc.LightingServiceBlockingStub blockingStub;
     private static StreamObserver<IntRequest> lightlevel;
+  
     
     public static void main (String args[]) throws Exception {
     	ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
@@ -23,9 +25,13 @@ public class LightingClient{
 		blockingStub = LightingServiceGrpc.newBlockingStub(channel);
 		asyncStub = LightingServiceGrpc.newStub(channel);
 		
+		
 		turnOnLights();
 		turnOffLights();
 		changeLightingLevel();
+		changeLightColour();
+	
+
     }
     
    
@@ -43,13 +49,20 @@ public class LightingClient{
         System.out.print(response.getText());
         return response.getText();
     }
+    
+    // TURN ON LIGHTS
+    public static String changeLightColour() throws io.grpc.StatusRuntimeException{
+        StringResponse response = blockingStub.changeLightColour(null);
+        System.out.print(response.getText());
+        return response.getText();
+    }
  // CHANGE LIGHTNING LEVEL
     public static void changeLightingLevel() throws io.grpc.StatusRuntimeException{
     	StreamObserver<StringResponse> responseStreamObserver = new StreamObserver<StringResponse>() {
 
 			@Override
 			public void onNext(StringResponse response) {
-				System.out.println("receiving length: " + response.getText());
+				System.out.println(response.getText());
 				
 			}
 
@@ -83,5 +96,7 @@ public class LightingClient{
     	
     	
     }
+    
+ 
   
 }
