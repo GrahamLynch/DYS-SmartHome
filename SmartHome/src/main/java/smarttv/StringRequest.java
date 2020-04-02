@@ -4,19 +4,19 @@
 package smarttv;
 
 /**
- * Protobuf type {@code smarttv.IntResponse}
+ * Protobuf type {@code smarttv.StringRequest}
  */
-public  final class IntResponse extends
+public  final class StringRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:smarttv.IntResponse)
-    IntResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:smarttv.StringRequest)
+    StringRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use IntResponse.newBuilder() to construct.
-  private IntResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use StringRequest.newBuilder() to construct.
+  private StringRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private IntResponse() {
-    value_ = 0;
+  private StringRequest() {
+    text_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private IntResponse(
+  private StringRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -43,9 +43,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            value_ = input.readInt32();
+            text_ = s;
             break;
           }
           default: {
@@ -69,24 +70,49 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return smarttv.Smarttv.internal_static_smarttv_IntResponse_descriptor;
+    return smarttv.Smarttv.internal_static_smarttv_StringRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return smarttv.Smarttv.internal_static_smarttv_IntResponse_fieldAccessorTable
+    return smarttv.Smarttv.internal_static_smarttv_StringRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            smarttv.IntResponse.class, smarttv.IntResponse.Builder.class);
+            smarttv.StringRequest.class, smarttv.StringRequest.Builder.class);
   }
 
-  public static final int VALUE_FIELD_NUMBER = 1;
-  private int value_;
+  public static final int TEXT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object text_;
   /**
-   * <code>int32 value = 1;</code>
+   * <code>string text = 1;</code>
    */
-  public int getValue() {
-    return value_;
+  public java.lang.String getText() {
+    java.lang.Object ref = text_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      text_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string text = 1;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTextBytes() {
+    java.lang.Object ref = text_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      text_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -103,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (value_ != 0) {
-      output.writeInt32(1, value_);
+    if (!getTextBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
     }
     unknownFields.writeTo(output);
   }
@@ -115,9 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (value_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, value_);
+    if (!getTextBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -129,14 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof smarttv.IntResponse)) {
+    if (!(obj instanceof smarttv.StringRequest)) {
       return super.equals(obj);
     }
-    smarttv.IntResponse other = (smarttv.IntResponse) obj;
+    smarttv.StringRequest other = (smarttv.StringRequest) obj;
 
     boolean result = true;
-    result = result && (getValue()
-        == other.getValue());
+    result = result && getText()
+        .equals(other.getText());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -148,76 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + getValue();
+    hash = (37 * hash) + TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getText().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static smarttv.IntResponse parseFrom(byte[] data)
+  public static smarttv.StringRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static smarttv.IntResponse parseFrom(java.io.InputStream input)
+  public static smarttv.StringRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static smarttv.IntResponse parseDelimitedFrom(java.io.InputStream input)
+  public static smarttv.StringRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static smarttv.IntResponse parseDelimitedFrom(
+  public static smarttv.StringRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static smarttv.IntResponse parseFrom(
+  public static smarttv.StringRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -230,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(smarttv.IntResponse prototype) {
+  public static Builder newBuilder(smarttv.StringRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -246,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code smarttv.IntResponse}
+   * Protobuf type {@code smarttv.StringRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:smarttv.IntResponse)
-      smarttv.IntResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:smarttv.StringRequest)
+      smarttv.StringRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return smarttv.Smarttv.internal_static_smarttv_IntResponse_descriptor;
+      return smarttv.Smarttv.internal_static_smarttv_StringRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return smarttv.Smarttv.internal_static_smarttv_IntResponse_fieldAccessorTable
+      return smarttv.Smarttv.internal_static_smarttv_StringRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              smarttv.IntResponse.class, smarttv.IntResponse.Builder.class);
+              smarttv.StringRequest.class, smarttv.StringRequest.Builder.class);
     }
 
-    // Construct using smarttv.IntResponse.newBuilder()
+    // Construct using smarttv.StringRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -283,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      value_ = 0;
+      text_ = "";
 
       return this;
     }
@@ -291,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return smarttv.Smarttv.internal_static_smarttv_IntResponse_descriptor;
+      return smarttv.Smarttv.internal_static_smarttv_StringRequest_descriptor;
     }
 
     @java.lang.Override
-    public smarttv.IntResponse getDefaultInstanceForType() {
-      return smarttv.IntResponse.getDefaultInstance();
+    public smarttv.StringRequest getDefaultInstanceForType() {
+      return smarttv.StringRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public smarttv.IntResponse build() {
-      smarttv.IntResponse result = buildPartial();
+    public smarttv.StringRequest build() {
+      smarttv.StringRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -309,9 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public smarttv.IntResponse buildPartial() {
-      smarttv.IntResponse result = new smarttv.IntResponse(this);
-      result.value_ = value_;
+    public smarttv.StringRequest buildPartial() {
+      smarttv.StringRequest result = new smarttv.StringRequest(this);
+      result.text_ = text_;
       onBuilt();
       return result;
     }
@@ -350,18 +375,19 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof smarttv.IntResponse) {
-        return mergeFrom((smarttv.IntResponse)other);
+      if (other instanceof smarttv.StringRequest) {
+        return mergeFrom((smarttv.StringRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(smarttv.IntResponse other) {
-      if (other == smarttv.IntResponse.getDefaultInstance()) return this;
-      if (other.getValue() != 0) {
-        setValue(other.getValue());
+    public Builder mergeFrom(smarttv.StringRequest other) {
+      if (other == smarttv.StringRequest.getDefaultInstance()) return this;
+      if (!other.getText().isEmpty()) {
+        text_ = other.text_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -378,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      smarttv.IntResponse parsedMessage = null;
+      smarttv.StringRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (smarttv.IntResponse) e.getUnfinishedMessage();
+        parsedMessage = (smarttv.StringRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -392,28 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int value_ ;
+    private java.lang.Object text_ = "";
     /**
-     * <code>int32 value = 1;</code>
+     * <code>string text = 1;</code>
      */
-    public int getValue() {
-      return value_;
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int32 value = 1;</code>
+     * <code>string text = 1;</code>
      */
-    public Builder setValue(int value) {
-      
-      value_ = value;
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string text = 1;</code>
+     */
+    public Builder setText(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      text_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 value = 1;</code>
+     * <code>string text = 1;</code>
      */
-    public Builder clearValue() {
+    public Builder clearText() {
       
-      value_ = 0;
+      text_ = getDefaultInstance().getText();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string text = 1;</code>
+     */
+    public Builder setTextBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      text_ = value;
       onChanged();
       return this;
     }
@@ -430,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:smarttv.IntResponse)
+    // @@protoc_insertion_point(builder_scope:smarttv.StringRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:smarttv.IntResponse)
-  private static final smarttv.IntResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:smarttv.StringRequest)
+  private static final smarttv.StringRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new smarttv.IntResponse();
+    DEFAULT_INSTANCE = new smarttv.StringRequest();
   }
 
-  public static smarttv.IntResponse getDefaultInstance() {
+  public static smarttv.StringRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IntResponse>
-      PARSER = new com.google.protobuf.AbstractParser<IntResponse>() {
+  private static final com.google.protobuf.Parser<StringRequest>
+      PARSER = new com.google.protobuf.AbstractParser<StringRequest>() {
     @java.lang.Override
-    public IntResponse parsePartialFrom(
+    public StringRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new IntResponse(input, extensionRegistry);
+      return new StringRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<IntResponse> parser() {
+  public static com.google.protobuf.Parser<StringRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<IntResponse> getParserForType() {
+  public com.google.protobuf.Parser<StringRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public smarttv.IntResponse getDefaultInstanceForType() {
+  public smarttv.StringRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

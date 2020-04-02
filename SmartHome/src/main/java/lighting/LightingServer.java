@@ -25,11 +25,11 @@ public class LightingServer extends LightingServiceImplBase {
 	        .build()
 	        .start();
 	    
-    System.out.println ("Server is listening" +port);
+    System.out.println ("Server is listening" + port);
 	    		    
 	    server.awaitTermination();
  }
-@Override	
+@Override
 public void turnOnLights(final Empty request,final StreamObserver<StringResponse> responseObserver) {
 	lightStatus = "On";
 	lightResponse = "The lights have been turned on!";
@@ -63,6 +63,7 @@ public void changeLightColour(final Empty request,final StreamObserver<StringRes
 	responseObserver.onNext(response);
 	responseObserver.onCompleted();
 }
+
 
 
 @Override

@@ -28,131 +28,131 @@ public final class SmartTvServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<smarttv.Empty,
-      smarttv.StringResponse> getTurnOnTVMethod;
+      smarttv.StringResponse> getTurnOnTvMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "turnOnTV",
+      fullMethodName = SERVICE_NAME + '/' + "turnOnTv",
       requestType = smarttv.Empty.class,
       responseType = smarttv.StringResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<smarttv.Empty,
-      smarttv.StringResponse> getTurnOnTVMethod() {
-    io.grpc.MethodDescriptor<smarttv.Empty, smarttv.StringResponse> getTurnOnTVMethod;
-    if ((getTurnOnTVMethod = SmartTvServiceGrpc.getTurnOnTVMethod) == null) {
+      smarttv.StringResponse> getTurnOnTvMethod() {
+    io.grpc.MethodDescriptor<smarttv.Empty, smarttv.StringResponse> getTurnOnTvMethod;
+    if ((getTurnOnTvMethod = SmartTvServiceGrpc.getTurnOnTvMethod) == null) {
       synchronized (SmartTvServiceGrpc.class) {
-        if ((getTurnOnTVMethod = SmartTvServiceGrpc.getTurnOnTVMethod) == null) {
-          SmartTvServiceGrpc.getTurnOnTVMethod = getTurnOnTVMethod = 
+        if ((getTurnOnTvMethod = SmartTvServiceGrpc.getTurnOnTvMethod) == null) {
+          SmartTvServiceGrpc.getTurnOnTvMethod = getTurnOnTvMethod = 
               io.grpc.MethodDescriptor.<smarttv.Empty, smarttv.StringResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "smarttv.SmartTvService", "turnOnTV"))
+                  "smarttv.SmartTvService", "turnOnTv"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smarttv.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smarttv.StringResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("turnOnTV"))
+                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("turnOnTv"))
                   .build();
           }
         }
      }
-     return getTurnOnTVMethod;
+     return getTurnOnTvMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<smarttv.Empty,
-      smarttv.StringResponse> getTurnOffTVMethod;
+      smarttv.StringResponse> getTurnOffTvMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "turnOffTV",
+      fullMethodName = SERVICE_NAME + '/' + "turnOffTv",
       requestType = smarttv.Empty.class,
       responseType = smarttv.StringResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<smarttv.Empty,
-      smarttv.StringResponse> getTurnOffTVMethod() {
-    io.grpc.MethodDescriptor<smarttv.Empty, smarttv.StringResponse> getTurnOffTVMethod;
-    if ((getTurnOffTVMethod = SmartTvServiceGrpc.getTurnOffTVMethod) == null) {
+      smarttv.StringResponse> getTurnOffTvMethod() {
+    io.grpc.MethodDescriptor<smarttv.Empty, smarttv.StringResponse> getTurnOffTvMethod;
+    if ((getTurnOffTvMethod = SmartTvServiceGrpc.getTurnOffTvMethod) == null) {
       synchronized (SmartTvServiceGrpc.class) {
-        if ((getTurnOffTVMethod = SmartTvServiceGrpc.getTurnOffTVMethod) == null) {
-          SmartTvServiceGrpc.getTurnOffTVMethod = getTurnOffTVMethod = 
+        if ((getTurnOffTvMethod = SmartTvServiceGrpc.getTurnOffTvMethod) == null) {
+          SmartTvServiceGrpc.getTurnOffTvMethod = getTurnOffTvMethod = 
               io.grpc.MethodDescriptor.<smarttv.Empty, smarttv.StringResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "smarttv.SmartTvService", "turnOffTV"))
+                  "smarttv.SmartTvService", "turnOffTv"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smarttv.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smarttv.StringResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("turnOffTV"))
+                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("turnOffTv"))
                   .build();
           }
         }
      }
-     return getTurnOffTVMethod;
+     return getTurnOffTvMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<smarttv.TvSetting,
-      smarttv.StringResponse> getChangeTVSettingMethod;
+  private static volatile io.grpc.MethodDescriptor<smarttv.StringRequest,
+      smarttv.StringResponse> getConnectToWifiMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "changeTVSetting",
-      requestType = smarttv.TvSetting.class,
+      fullMethodName = SERVICE_NAME + '/' + "connectToWifi",
+      requestType = smarttv.StringRequest.class,
       responseType = smarttv.StringResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<smarttv.TvSetting,
-      smarttv.StringResponse> getChangeTVSettingMethod() {
-    io.grpc.MethodDescriptor<smarttv.TvSetting, smarttv.StringResponse> getChangeTVSettingMethod;
-    if ((getChangeTVSettingMethod = SmartTvServiceGrpc.getChangeTVSettingMethod) == null) {
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<smarttv.StringRequest,
+      smarttv.StringResponse> getConnectToWifiMethod() {
+    io.grpc.MethodDescriptor<smarttv.StringRequest, smarttv.StringResponse> getConnectToWifiMethod;
+    if ((getConnectToWifiMethod = SmartTvServiceGrpc.getConnectToWifiMethod) == null) {
       synchronized (SmartTvServiceGrpc.class) {
-        if ((getChangeTVSettingMethod = SmartTvServiceGrpc.getChangeTVSettingMethod) == null) {
-          SmartTvServiceGrpc.getChangeTVSettingMethod = getChangeTVSettingMethod = 
-              io.grpc.MethodDescriptor.<smarttv.TvSetting, smarttv.StringResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+        if ((getConnectToWifiMethod = SmartTvServiceGrpc.getConnectToWifiMethod) == null) {
+          SmartTvServiceGrpc.getConnectToWifiMethod = getConnectToWifiMethod = 
+              io.grpc.MethodDescriptor.<smarttv.StringRequest, smarttv.StringResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "smarttv.SmartTvService", "changeTVSetting"))
+                  "smarttv.SmartTvService", "connectToWifi"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  smarttv.TvSetting.getDefaultInstance()))
+                  smarttv.StringRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smarttv.StringResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("changeTVSetting"))
+                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("connectToWifi"))
                   .build();
           }
         }
      }
-     return getChangeTVSettingMethod;
+     return getConnectToWifiMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<smarttv.IntRequest,
-      smarttv.StringResponse> getChangeVolumeLevelMethod;
+  private static volatile io.grpc.MethodDescriptor<smarttv.StringRequest,
+      smarttv.StringResponse> getChangeChannelMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "changeVolumeLevel",
-      requestType = smarttv.IntRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "changeChannel",
+      requestType = smarttv.StringRequest.class,
       responseType = smarttv.StringResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<smarttv.IntRequest,
-      smarttv.StringResponse> getChangeVolumeLevelMethod() {
-    io.grpc.MethodDescriptor<smarttv.IntRequest, smarttv.StringResponse> getChangeVolumeLevelMethod;
-    if ((getChangeVolumeLevelMethod = SmartTvServiceGrpc.getChangeVolumeLevelMethod) == null) {
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<smarttv.StringRequest,
+      smarttv.StringResponse> getChangeChannelMethod() {
+    io.grpc.MethodDescriptor<smarttv.StringRequest, smarttv.StringResponse> getChangeChannelMethod;
+    if ((getChangeChannelMethod = SmartTvServiceGrpc.getChangeChannelMethod) == null) {
       synchronized (SmartTvServiceGrpc.class) {
-        if ((getChangeVolumeLevelMethod = SmartTvServiceGrpc.getChangeVolumeLevelMethod) == null) {
-          SmartTvServiceGrpc.getChangeVolumeLevelMethod = getChangeVolumeLevelMethod = 
-              io.grpc.MethodDescriptor.<smarttv.IntRequest, smarttv.StringResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+        if ((getChangeChannelMethod = SmartTvServiceGrpc.getChangeChannelMethod) == null) {
+          SmartTvServiceGrpc.getChangeChannelMethod = getChangeChannelMethod = 
+              io.grpc.MethodDescriptor.<smarttv.StringRequest, smarttv.StringResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "smarttv.SmartTvService", "changeVolumeLevel"))
+                  "smarttv.SmartTvService", "changeChannel"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  smarttv.IntRequest.getDefaultInstance()))
+                  smarttv.StringRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smarttv.StringResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("changeVolumeLevel"))
+                  .setSchemaDescriptor(new SmartTvServiceMethodDescriptorSupplier("changeChannel"))
                   .build();
           }
         }
      }
-     return getChangeVolumeLevelMethod;
+     return getChangeChannelMethod;
   }
 
   /**
@@ -184,62 +184,62 @@ public final class SmartTvServiceGrpc {
 
     /**
      */
-    public void turnOnTV(smarttv.Empty request,
+    public void turnOnTv(smarttv.Empty request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTurnOnTVMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getTurnOnTvMethod(), responseObserver);
     }
 
     /**
      */
-    public void turnOffTV(smarttv.Empty request,
+    public void turnOffTv(smarttv.Empty request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTurnOffTVMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getTurnOffTvMethod(), responseObserver);
     }
 
     /**
      */
-    public void changeTVSetting(smarttv.TvSetting request,
+    public void connectToWifi(smarttv.StringRequest request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeTVSettingMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getConnectToWifiMethod(), responseObserver);
     }
 
     /**
      */
-    public void changeVolumeLevel(smarttv.IntRequest request,
+    public void changeChannel(smarttv.StringRequest request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeVolumeLevelMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getChangeChannelMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getTurnOnTVMethod(),
+            getTurnOnTvMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 smarttv.Empty,
                 smarttv.StringResponse>(
                   this, METHODID_TURN_ON_TV)))
           .addMethod(
-            getTurnOffTVMethod(),
+            getTurnOffTvMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 smarttv.Empty,
                 smarttv.StringResponse>(
                   this, METHODID_TURN_OFF_TV)))
           .addMethod(
-            getChangeTVSettingMethod(),
-            asyncUnaryCall(
+            getConnectToWifiMethod(),
+            asyncServerStreamingCall(
               new MethodHandlers<
-                smarttv.TvSetting,
+                smarttv.StringRequest,
                 smarttv.StringResponse>(
-                  this, METHODID_CHANGE_TVSETTING)))
+                  this, METHODID_CONNECT_TO_WIFI)))
           .addMethod(
-            getChangeVolumeLevelMethod(),
-            asyncUnaryCall(
+            getChangeChannelMethod(),
+            asyncServerStreamingCall(
               new MethodHandlers<
-                smarttv.IntRequest,
+                smarttv.StringRequest,
                 smarttv.StringResponse>(
-                  this, METHODID_CHANGE_VOLUME_LEVEL)))
+                  this, METHODID_CHANGE_CHANNEL)))
           .build();
     }
   }
@@ -264,34 +264,34 @@ public final class SmartTvServiceGrpc {
 
     /**
      */
-    public void turnOnTV(smarttv.Empty request,
+    public void turnOnTv(smarttv.Empty request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getTurnOnTVMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getTurnOnTvMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void turnOffTV(smarttv.Empty request,
+    public void turnOffTv(smarttv.Empty request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getTurnOffTVMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getTurnOffTvMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void changeTVSetting(smarttv.TvSetting request,
+    public void connectToWifi(smarttv.StringRequest request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getChangeTVSettingMethod(), getCallOptions()), request, responseObserver);
+      asyncServerStreamingCall(
+          getChannel().newCall(getConnectToWifiMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void changeVolumeLevel(smarttv.IntRequest request,
+    public void changeChannel(smarttv.StringRequest request,
         io.grpc.stub.StreamObserver<smarttv.StringResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getChangeVolumeLevelMethod(), getCallOptions()), request, responseObserver);
+      asyncServerStreamingCall(
+          getChannel().newCall(getChangeChannelMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -315,30 +315,32 @@ public final class SmartTvServiceGrpc {
 
     /**
      */
-    public smarttv.StringResponse turnOnTV(smarttv.Empty request) {
+    public smarttv.StringResponse turnOnTv(smarttv.Empty request) {
       return blockingUnaryCall(
-          getChannel(), getTurnOnTVMethod(), getCallOptions(), request);
+          getChannel(), getTurnOnTvMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public smarttv.StringResponse turnOffTV(smarttv.Empty request) {
+    public smarttv.StringResponse turnOffTv(smarttv.Empty request) {
       return blockingUnaryCall(
-          getChannel(), getTurnOffTVMethod(), getCallOptions(), request);
+          getChannel(), getTurnOffTvMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public smarttv.StringResponse changeTVSetting(smarttv.TvSetting request) {
-      return blockingUnaryCall(
-          getChannel(), getChangeTVSettingMethod(), getCallOptions(), request);
+    public java.util.Iterator<smarttv.StringResponse> connectToWifi(
+        smarttv.StringRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getConnectToWifiMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public smarttv.StringResponse changeVolumeLevel(smarttv.IntRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getChangeVolumeLevelMethod(), getCallOptions(), request);
+    public java.util.Iterator<smarttv.StringResponse> changeChannel(
+        smarttv.StringRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getChangeChannelMethod(), getCallOptions(), request);
     }
   }
 
@@ -362,41 +364,25 @@ public final class SmartTvServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<smarttv.StringResponse> turnOnTV(
+    public com.google.common.util.concurrent.ListenableFuture<smarttv.StringResponse> turnOnTv(
         smarttv.Empty request) {
       return futureUnaryCall(
-          getChannel().newCall(getTurnOnTVMethod(), getCallOptions()), request);
+          getChannel().newCall(getTurnOnTvMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<smarttv.StringResponse> turnOffTV(
+    public com.google.common.util.concurrent.ListenableFuture<smarttv.StringResponse> turnOffTv(
         smarttv.Empty request) {
       return futureUnaryCall(
-          getChannel().newCall(getTurnOffTVMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<smarttv.StringResponse> changeTVSetting(
-        smarttv.TvSetting request) {
-      return futureUnaryCall(
-          getChannel().newCall(getChangeTVSettingMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<smarttv.StringResponse> changeVolumeLevel(
-        smarttv.IntRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getChangeVolumeLevelMethod(), getCallOptions()), request);
+          getChannel().newCall(getTurnOffTvMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_TURN_ON_TV = 0;
   private static final int METHODID_TURN_OFF_TV = 1;
-  private static final int METHODID_CHANGE_TVSETTING = 2;
-  private static final int METHODID_CHANGE_VOLUME_LEVEL = 3;
+  private static final int METHODID_CONNECT_TO_WIFI = 2;
+  private static final int METHODID_CHANGE_CHANNEL = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -416,19 +402,19 @@ public final class SmartTvServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_TURN_ON_TV:
-          serviceImpl.turnOnTV((smarttv.Empty) request,
+          serviceImpl.turnOnTv((smarttv.Empty) request,
               (io.grpc.stub.StreamObserver<smarttv.StringResponse>) responseObserver);
           break;
         case METHODID_TURN_OFF_TV:
-          serviceImpl.turnOffTV((smarttv.Empty) request,
+          serviceImpl.turnOffTv((smarttv.Empty) request,
               (io.grpc.stub.StreamObserver<smarttv.StringResponse>) responseObserver);
           break;
-        case METHODID_CHANGE_TVSETTING:
-          serviceImpl.changeTVSetting((smarttv.TvSetting) request,
+        case METHODID_CONNECT_TO_WIFI:
+          serviceImpl.connectToWifi((smarttv.StringRequest) request,
               (io.grpc.stub.StreamObserver<smarttv.StringResponse>) responseObserver);
           break;
-        case METHODID_CHANGE_VOLUME_LEVEL:
-          serviceImpl.changeVolumeLevel((smarttv.IntRequest) request,
+        case METHODID_CHANGE_CHANNEL:
+          serviceImpl.changeChannel((smarttv.StringRequest) request,
               (io.grpc.stub.StreamObserver<smarttv.StringResponse>) responseObserver);
           break;
         default:
@@ -492,10 +478,10 @@ public final class SmartTvServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SmartTvServiceFileDescriptorSupplier())
-              .addMethod(getTurnOnTVMethod())
-              .addMethod(getTurnOffTVMethod())
-              .addMethod(getChangeTVSettingMethod())
-              .addMethod(getChangeVolumeLevelMethod())
+              .addMethod(getTurnOnTvMethod())
+              .addMethod(getTurnOffTvMethod())
+              .addMethod(getConnectToWifiMethod())
+              .addMethod(getChangeChannelMethod())
               .build();
         }
       }

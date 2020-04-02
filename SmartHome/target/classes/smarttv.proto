@@ -5,31 +5,21 @@ option java_multiple_files = true;
 package smarttv;
 
 service SmartTvService{
-rpc turnOnTV(Empty) returns (StringResponse);
-rpc turnOffTV(Empty) returns (StringResponse);
-rpc changeTVSetting(TvSetting) returns (StringResponse);
-rpc changeVolumeLevel(IntRequest) returns (StringResponse);
+rpc turnOnTv(Empty) returns (StringResponse);
+rpc turnOffTv(Empty) returns (StringResponse);
+rpc connectToWifi(StringRequest) returns (stream StringResponse);
+rpc changeChannel(StringRequest) returns (stream StringResponse);
 
 }
 
-message TvSetting{
-    enum Setting {
-        NORMAL = 0;
-       	SPORT = 1;
-        CINEMA = 2;
-    }
-}
-
-message IntResponse{
-	int32 value = 1;
-}
-
-message IntRequest{
-    int32 value = 1;
-}
 
 message StringResponse{
 	string text = 1;
 }
+
+message StringRequest{
+	string text = 1;
+}
+
 
 message Empty{}

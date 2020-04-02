@@ -15,25 +15,15 @@ public final class Smarttv {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_smarttv_TvSetting_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_smarttv_TvSetting_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_smarttv_IntResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_smarttv_IntResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_smarttv_IntRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_smarttv_IntRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_smarttv_StringResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_smarttv_StringResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_smarttv_StringRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_smarttv_StringRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_smarttv_Empty_descriptor;
   static final 
@@ -48,18 +38,16 @@ public final class Smarttv {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rsmarttv.proto\022\007smarttv\"9\n\tTvSetting\",\n" +
-      "\007Setting\022\n\n\006NORMAL\020\000\022\t\n\005SPORT\020\001\022\n\n\006CINEM" +
-      "A\020\002\"\034\n\013IntResponse\022\r\n\005value\030\001 \001(\005\"\033\n\nInt" +
-      "Request\022\r\n\005value\030\001 \001(\005\"\036\n\016StringResponse" +
-      "\022\014\n\004text\030\001 \001(\t\"\007\n\005Empty2\376\001\n\016SmartTvServi" +
-      "ce\0223\n\010turnOnTV\022\016.smarttv.Empty\032\027.smarttv" +
-      ".StringResponse\0224\n\tturnOffTV\022\016.smarttv.E" +
-      "mpty\032\027.smarttv.StringResponse\022>\n\017changeT" +
-      "VSetting\022\022.smarttv.TvSetting\032\027.smarttv.S" +
-      "tringResponse\022A\n\021changeVolumeLevel\022\023.sma" +
-      "rttv.IntRequest\032\027.smarttv.StringResponse" +
-      "B\002P\001b\006proto3"
+      "\n\rsmarttv.proto\022\007smarttv\"\036\n\016StringRespon" +
+      "se\022\014\n\004text\030\001 \001(\t\"\035\n\rStringRequest\022\014\n\004tex" +
+      "t\030\001 \001(\t\"\007\n\005Empty2\203\002\n\016SmartTvService\0223\n\010t" +
+      "urnOnTv\022\016.smarttv.Empty\032\027.smarttv.String" +
+      "Response\0224\n\tturnOffTv\022\016.smarttv.Empty\032\027." +
+      "smarttv.StringResponse\022B\n\rconnectToWifi\022" +
+      "\026.smarttv.StringRequest\032\027.smarttv.String" +
+      "Response0\001\022B\n\rchangeChannel\022\026.smarttv.St" +
+      "ringRequest\032\027.smarttv.StringResponse0\001B\002" +
+      "P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -73,32 +61,20 @@ public final class Smarttv {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_smarttv_TvSetting_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_smarttv_TvSetting_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_smarttv_TvSetting_descriptor,
-        new java.lang.String[] { });
-    internal_static_smarttv_IntResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_smarttv_IntResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_smarttv_IntResponse_descriptor,
-        new java.lang.String[] { "Value", });
-    internal_static_smarttv_IntRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_smarttv_IntRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_smarttv_IntRequest_descriptor,
-        new java.lang.String[] { "Value", });
     internal_static_smarttv_StringResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_smarttv_StringResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_smarttv_StringResponse_descriptor,
         new java.lang.String[] { "Text", });
+    internal_static_smarttv_StringRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_smarttv_StringRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_smarttv_StringRequest_descriptor,
+        new java.lang.String[] { "Text", });
     internal_static_smarttv_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_smarttv_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_smarttv_Empty_descriptor,
