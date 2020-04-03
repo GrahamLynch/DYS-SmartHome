@@ -7,9 +7,10 @@ package speakers;
 service SpeakersService{
 
 rpc getCurrentVolume(Empty) returns (IntResponse);
-rpc setCurrentVolume(IntRequest) returns (StringResponse);
-rpc changeSpeakersSetting(SpeakersSetting) returns (StringResponse);
+rpc chnageVolume(stream IntRequest) returns (StringResponse);
+rpc changeSpeakersSetting(stream SpeakersSetting) returns (StringResponse);
 rpc turnOnSpeakers(Empty) returns (StringResponse);
+rpc turnOffSpeakers(Empty) returns (StringResponse);
 }
 
 message IntResponse{

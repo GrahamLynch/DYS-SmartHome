@@ -52,15 +52,16 @@ public final class Speakers {
       "e\022\r\n\005value\030\001 \001(\005\"\033\n\nIntRequest\022\r\n\005value\030" +
       "\001 \001(\005\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(\t\"?\n" +
       "\017SpeakersSetting\",\n\007Setting\022\n\n\006CINEMA\020\000\022" +
-      "\n\n\006SPORTS\020\001\022\t\n\005MUSIC\020\002\"\007\n\005Empty2\234\002\n\017Spea" +
+      "\n\n\006SPORTS\020\001\022\t\n\005MUSIC\020\002\"\007\n\005Empty2\332\002\n\017Spea" +
       "kersService\022:\n\020getCurrentVolume\022\017.speake" +
-      "rs.Empty\032\025.speakers.IntResponse\022B\n\020setCu" +
-      "rrentVolume\022\024.speakers.IntRequest\032\030.spea" +
-      "kers.StringResponse\022L\n\025changeSpeakersSet" +
-      "ting\022\031.speakers.SpeakersSetting\032\030.speake" +
-      "rs.StringResponse\022;\n\016turnOnSpeakers\022\017.sp" +
-      "eakers.Empty\032\030.speakers.StringResponseB\002" +
-      "P\001b\006proto3"
+      "rs.Empty\032\025.speakers.IntResponse\022@\n\014chnag" +
+      "eVolume\022\024.speakers.IntRequest\032\030.speakers" +
+      ".StringResponse(\001\022N\n\025changeSpeakersSetti" +
+      "ng\022\031.speakers.SpeakersSetting\032\030.speakers" +
+      ".StringResponse(\001\022;\n\016turnOnSpeakers\022\017.sp" +
+      "eakers.Empty\032\030.speakers.StringResponse\022<" +
+      "\n\017turnOffSpeakers\022\017.speakers.Empty\032\030.spe" +
+      "akers.StringResponseB\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

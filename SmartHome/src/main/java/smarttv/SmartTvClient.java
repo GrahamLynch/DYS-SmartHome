@@ -50,9 +50,9 @@ public class SmartTvClient{
         System.out.print(response.getText());
         return response.getText();
     }
-    
+ // CONNECT TO WIFI   
     public static void connectToWifi() {
-		StringRequest request = StringRequest.newBuilder().setText("message 1 - introduction").build();
+		StringRequest request = StringRequest.newBuilder().setText("").build();
 
 		StreamObserver<StringResponse> responseObserver = new StreamObserver<StringResponse>() {
 
@@ -86,67 +86,7 @@ public class SmartTvClient{
 		}
 		
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-	public static void connectTvToNetwork() {
-		StreamObserver<StringResponse> responseObserver = new StreamObserver<StringResponse>() {
-
-			@Override
-			public void onNext(StringResponse value) {
-				System.out.println("receiving words: " + value.getText());
-			
-			}
-
-			@Override
-			public void onError(Throwable t) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onCompleted() {
-				// TODO Auto-generated method stub
-
-			}
-
-		};
-		
-		StreamObserver<StringRequest> requestObserver = asyncStub.connectTvToNetwork(responseObserver); 
-		try {
-			requestObserver.onNext(StringRequest.newBuilder().setText("Dominic").build());
-			requestObserver.onNext(StringRequest.newBuilder().setText("James").build());
-			requestObserver.onNext(StringRequest.newBuilder().setText("Paul").build());
-			requestObserver.onNext(StringRequest.newBuilder().setText("Pramod").build());
-			requestObserver.onCompleted();
-			
-			Thread.sleep(new Random().nextInt(1000)+500);
-		} catch (RuntimeException e) {
-			requestObserver.onError(e);
-			throw e;
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		}
-		*/
-		
+   		
 		
 	}	
 

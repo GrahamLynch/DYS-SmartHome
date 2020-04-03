@@ -60,51 +60,23 @@ public class SmartTvServer extends SmartTvServiceImplBase {
 		 
 		
 			 responseObserver.onNext(StringResponse.newBuilder().setText("Connecting to wifi").build());
-			 responseObserver.onNext(StringResponse.newBuilder().setText("Wifi Connected").build());
-	
-		 
+			 try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			 responseObserver.onNext(StringResponse.newBuilder().setText("Wifi Connection found").build());
+			 try {
+					Thread.sleep(3000);
+			} catch (InterruptedException e) {
+					e.printStackTrace();
+			}
+			responseObserver.onNext(StringResponse.newBuilder().setText("Wifi Connected").build());
 		 
 		 responseObserver.onCompleted();
 	}
-	/*
-	@Override
-	public StreamObserver<StringRequest> connectTvToNetwork(StreamObserver<StringResponse> responseObserver) {
-		return new StreamObserver<StringRequest>() {
 
-			@Override
-			public void onNext(StringRequest value) {
-					StringBuilder input1 = new StringBuilder(); 
-		            input1.append(value.getText()); 
-		            input1 = input1.reverse();
-		        
-		            StringResponse reply = StringResponse.newBuilder().setText(input1.toString()).build();
-		            System.out.println("" + reply);
-		            responseObserver.onNext(reply);
-				
-			}
-
-			@Override
-			public void onError(Throwable t) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void onCompleted() {
-				StringResponse res = StringResponse.newBuilder().setText("Hello").build();
-		          responseObserver.onNext(res);
-		          responseObserver.onCompleted();
-				
-			}
-			
-		};
-		
-		
-	}
-	*/
 	
-	
-   
-   
+     
 }
 		

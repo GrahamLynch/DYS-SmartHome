@@ -60,35 +60,35 @@ public final class SpeakersServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<speakers.IntRequest,
-      speakers.StringResponse> getSetCurrentVolumeMethod;
+      speakers.StringResponse> getChnageVolumeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "setCurrentVolume",
+      fullMethodName = SERVICE_NAME + '/' + "chnageVolume",
       requestType = speakers.IntRequest.class,
       responseType = speakers.StringResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<speakers.IntRequest,
-      speakers.StringResponse> getSetCurrentVolumeMethod() {
-    io.grpc.MethodDescriptor<speakers.IntRequest, speakers.StringResponse> getSetCurrentVolumeMethod;
-    if ((getSetCurrentVolumeMethod = SpeakersServiceGrpc.getSetCurrentVolumeMethod) == null) {
+      speakers.StringResponse> getChnageVolumeMethod() {
+    io.grpc.MethodDescriptor<speakers.IntRequest, speakers.StringResponse> getChnageVolumeMethod;
+    if ((getChnageVolumeMethod = SpeakersServiceGrpc.getChnageVolumeMethod) == null) {
       synchronized (SpeakersServiceGrpc.class) {
-        if ((getSetCurrentVolumeMethod = SpeakersServiceGrpc.getSetCurrentVolumeMethod) == null) {
-          SpeakersServiceGrpc.getSetCurrentVolumeMethod = getSetCurrentVolumeMethod = 
+        if ((getChnageVolumeMethod = SpeakersServiceGrpc.getChnageVolumeMethod) == null) {
+          SpeakersServiceGrpc.getChnageVolumeMethod = getChnageVolumeMethod = 
               io.grpc.MethodDescriptor.<speakers.IntRequest, speakers.StringResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "speakers.SpeakersService", "setCurrentVolume"))
+                  "speakers.SpeakersService", "chnageVolume"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   speakers.IntRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   speakers.StringResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SpeakersServiceMethodDescriptorSupplier("setCurrentVolume"))
+                  .setSchemaDescriptor(new SpeakersServiceMethodDescriptorSupplier("chnageVolume"))
                   .build();
           }
         }
      }
-     return getSetCurrentVolumeMethod;
+     return getChnageVolumeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<speakers.SpeakersSetting,
@@ -98,7 +98,7 @@ public final class SpeakersServiceGrpc {
       fullMethodName = SERVICE_NAME + '/' + "changeSpeakersSetting",
       requestType = speakers.SpeakersSetting.class,
       responseType = speakers.StringResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<speakers.SpeakersSetting,
       speakers.StringResponse> getChangeSpeakersSettingMethod() {
     io.grpc.MethodDescriptor<speakers.SpeakersSetting, speakers.StringResponse> getChangeSpeakersSettingMethod;
@@ -107,7 +107,7 @@ public final class SpeakersServiceGrpc {
         if ((getChangeSpeakersSettingMethod = SpeakersServiceGrpc.getChangeSpeakersSettingMethod) == null) {
           SpeakersServiceGrpc.getChangeSpeakersSettingMethod = getChangeSpeakersSettingMethod = 
               io.grpc.MethodDescriptor.<speakers.SpeakersSetting, speakers.StringResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "speakers.SpeakersService", "changeSpeakersSetting"))
               .setSampledToLocalTracing(true)
@@ -155,6 +155,38 @@ public final class SpeakersServiceGrpc {
      return getTurnOnSpeakersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<speakers.Empty,
+      speakers.StringResponse> getTurnOffSpeakersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "turnOffSpeakers",
+      requestType = speakers.Empty.class,
+      responseType = speakers.StringResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<speakers.Empty,
+      speakers.StringResponse> getTurnOffSpeakersMethod() {
+    io.grpc.MethodDescriptor<speakers.Empty, speakers.StringResponse> getTurnOffSpeakersMethod;
+    if ((getTurnOffSpeakersMethod = SpeakersServiceGrpc.getTurnOffSpeakersMethod) == null) {
+      synchronized (SpeakersServiceGrpc.class) {
+        if ((getTurnOffSpeakersMethod = SpeakersServiceGrpc.getTurnOffSpeakersMethod) == null) {
+          SpeakersServiceGrpc.getTurnOffSpeakersMethod = getTurnOffSpeakersMethod = 
+              io.grpc.MethodDescriptor.<speakers.Empty, speakers.StringResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "speakers.SpeakersService", "turnOffSpeakers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  speakers.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  speakers.StringResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SpeakersServiceMethodDescriptorSupplier("turnOffSpeakers"))
+                  .build();
+          }
+        }
+     }
+     return getTurnOffSpeakersMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -191,16 +223,16 @@ public final class SpeakersServiceGrpc {
 
     /**
      */
-    public void setCurrentVolume(speakers.IntRequest request,
+    public io.grpc.stub.StreamObserver<speakers.IntRequest> chnageVolume(
         io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSetCurrentVolumeMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getChnageVolumeMethod(), responseObserver);
     }
 
     /**
      */
-    public void changeSpeakersSetting(speakers.SpeakersSetting request,
+    public io.grpc.stub.StreamObserver<speakers.SpeakersSetting> changeSpeakersSetting(
         io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getChangeSpeakersSettingMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getChangeSpeakersSettingMethod(), responseObserver);
     }
 
     /**
@@ -208,6 +240,13 @@ public final class SpeakersServiceGrpc {
     public void turnOnSpeakers(speakers.Empty request,
         io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getTurnOnSpeakersMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void turnOffSpeakers(speakers.Empty request,
+        io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTurnOffSpeakersMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -220,15 +259,15 @@ public final class SpeakersServiceGrpc {
                 speakers.IntResponse>(
                   this, METHODID_GET_CURRENT_VOLUME)))
           .addMethod(
-            getSetCurrentVolumeMethod(),
-            asyncUnaryCall(
+            getChnageVolumeMethod(),
+            asyncClientStreamingCall(
               new MethodHandlers<
                 speakers.IntRequest,
                 speakers.StringResponse>(
-                  this, METHODID_SET_CURRENT_VOLUME)))
+                  this, METHODID_CHNAGE_VOLUME)))
           .addMethod(
             getChangeSpeakersSettingMethod(),
-            asyncUnaryCall(
+            asyncClientStreamingCall(
               new MethodHandlers<
                 speakers.SpeakersSetting,
                 speakers.StringResponse>(
@@ -240,6 +279,13 @@ public final class SpeakersServiceGrpc {
                 speakers.Empty,
                 speakers.StringResponse>(
                   this, METHODID_TURN_ON_SPEAKERS)))
+          .addMethod(
+            getTurnOffSpeakersMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                speakers.Empty,
+                speakers.StringResponse>(
+                  this, METHODID_TURN_OFF_SPEAKERS)))
           .build();
     }
   }
@@ -272,18 +318,18 @@ public final class SpeakersServiceGrpc {
 
     /**
      */
-    public void setCurrentVolume(speakers.IntRequest request,
+    public io.grpc.stub.StreamObserver<speakers.IntRequest> chnageVolume(
         io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSetCurrentVolumeMethod(), getCallOptions()), request, responseObserver);
+      return asyncClientStreamingCall(
+          getChannel().newCall(getChnageVolumeMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public void changeSpeakersSetting(speakers.SpeakersSetting request,
+    public io.grpc.stub.StreamObserver<speakers.SpeakersSetting> changeSpeakersSetting(
         io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getChangeSpeakersSettingMethod(), getCallOptions()), request, responseObserver);
+      return asyncClientStreamingCall(
+          getChannel().newCall(getChangeSpeakersSettingMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -292,6 +338,14 @@ public final class SpeakersServiceGrpc {
         io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getTurnOnSpeakersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void turnOffSpeakers(speakers.Empty request,
+        io.grpc.stub.StreamObserver<speakers.StringResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTurnOffSpeakersMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -322,23 +376,16 @@ public final class SpeakersServiceGrpc {
 
     /**
      */
-    public speakers.StringResponse setCurrentVolume(speakers.IntRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getSetCurrentVolumeMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public speakers.StringResponse changeSpeakersSetting(speakers.SpeakersSetting request) {
-      return blockingUnaryCall(
-          getChannel(), getChangeSpeakersSettingMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public speakers.StringResponse turnOnSpeakers(speakers.Empty request) {
       return blockingUnaryCall(
           getChannel(), getTurnOnSpeakersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public speakers.StringResponse turnOffSpeakers(speakers.Empty request) {
+      return blockingUnaryCall(
+          getChannel(), getTurnOffSpeakersMethod(), getCallOptions(), request);
     }
   }
 
@@ -370,33 +417,26 @@ public final class SpeakersServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<speakers.StringResponse> setCurrentVolume(
-        speakers.IntRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSetCurrentVolumeMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<speakers.StringResponse> changeSpeakersSetting(
-        speakers.SpeakersSetting request) {
-      return futureUnaryCall(
-          getChannel().newCall(getChangeSpeakersSettingMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<speakers.StringResponse> turnOnSpeakers(
         speakers.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getTurnOnSpeakersMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<speakers.StringResponse> turnOffSpeakers(
+        speakers.Empty request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTurnOffSpeakersMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_CURRENT_VOLUME = 0;
-  private static final int METHODID_SET_CURRENT_VOLUME = 1;
-  private static final int METHODID_CHANGE_SPEAKERS_SETTING = 2;
-  private static final int METHODID_TURN_ON_SPEAKERS = 3;
+  private static final int METHODID_TURN_ON_SPEAKERS = 1;
+  private static final int METHODID_TURN_OFF_SPEAKERS = 2;
+  private static final int METHODID_CHNAGE_VOLUME = 3;
+  private static final int METHODID_CHANGE_SPEAKERS_SETTING = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -419,16 +459,12 @@ public final class SpeakersServiceGrpc {
           serviceImpl.getCurrentVolume((speakers.Empty) request,
               (io.grpc.stub.StreamObserver<speakers.IntResponse>) responseObserver);
           break;
-        case METHODID_SET_CURRENT_VOLUME:
-          serviceImpl.setCurrentVolume((speakers.IntRequest) request,
-              (io.grpc.stub.StreamObserver<speakers.StringResponse>) responseObserver);
-          break;
-        case METHODID_CHANGE_SPEAKERS_SETTING:
-          serviceImpl.changeSpeakersSetting((speakers.SpeakersSetting) request,
-              (io.grpc.stub.StreamObserver<speakers.StringResponse>) responseObserver);
-          break;
         case METHODID_TURN_ON_SPEAKERS:
           serviceImpl.turnOnSpeakers((speakers.Empty) request,
+              (io.grpc.stub.StreamObserver<speakers.StringResponse>) responseObserver);
+          break;
+        case METHODID_TURN_OFF_SPEAKERS:
+          serviceImpl.turnOffSpeakers((speakers.Empty) request,
               (io.grpc.stub.StreamObserver<speakers.StringResponse>) responseObserver);
           break;
         default:
@@ -441,6 +477,12 @@ public final class SpeakersServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CHNAGE_VOLUME:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.chnageVolume(
+              (io.grpc.stub.StreamObserver<speakers.StringResponse>) responseObserver);
+        case METHODID_CHANGE_SPEAKERS_SETTING:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.changeSpeakersSetting(
+              (io.grpc.stub.StreamObserver<speakers.StringResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -493,9 +535,10 @@ public final class SpeakersServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SpeakersServiceFileDescriptorSupplier())
               .addMethod(getGetCurrentVolumeMethod())
-              .addMethod(getSetCurrentVolumeMethod())
+              .addMethod(getChnageVolumeMethod())
               .addMethod(getChangeSpeakersSettingMethod())
               .addMethod(getTurnOnSpeakersMethod())
+              .addMethod(getTurnOffSpeakersMethod())
               .build();
         }
       }
