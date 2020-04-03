@@ -3,6 +3,7 @@ lighting\IntRequest$1.class
 lighting\StringResponse$1.class
 lighting\Empty.class
 smarttv\SmartTvServiceGrpc$SmartTvServiceBlockingStub.class
+speakers\SpeakersServer$1.class
 lighting\LightsSettingOrBuilder.class
 speakers\SpeakersServiceGrpc.class
 heating\Heating$1.class
@@ -21,6 +22,7 @@ speakers\SpeakersSetting$Setting.class
 heating\HeatingServiceGrpc$HeatingServiceStub.class
 heating\IntResponse$Builder.class
 lighting\Empty$Builder.class
+speakers\SpeakersClient$1.class
 speakers\SpeakersSetting$Setting$1.class
 speakers\SpeakersServiceGrpc$SpeakersServiceImplBase.class
 lighting\LightingClient$1.class
@@ -49,6 +51,7 @@ smarttv\StringRequest.class
 smarttv\StringRequestOrBuilder.class
 heating\IntRequest.class
 heating\StringResponse$1.class
+speakers\SpeakersServer.class
 lighting\IntResponse$1.class
 lighting\LightingServer.class
 heating\HeatingServiceGrpc$HeatingServiceMethodDescriptorSupplier.class
@@ -88,6 +91,7 @@ smarttv\SmartTvClient.class
 speakers\StringResponseOrBuilder.class
 lighting\LightingClient.class
 heating\IntResponse.class
+speakers\SpeakersClient.class
 smarttv\Empty$Builder.class
 heating\IntRequestOrBuilder.class
 heating\IntResponseOrBuilder.class
@@ -112,6 +116,7 @@ speakers\SpeakersServiceGrpc$1.class
 smarttv\SmartTvServer.class
 speakers\Empty$Builder.class
 heating\Empty$1.class
+heating\HeatingClient.class
 lighting\LightingServiceGrpc$LightingServiceImplBase.class
 smarttv\EmptyOrBuilder.class
 smarttv\StringResponseOrBuilder.class

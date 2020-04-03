@@ -9,11 +9,25 @@ import heating_pb2_grpc
 class HeatingServer(heating_pb2_grpc.HeatingServiceServicer):
     
     currentTemp = 40
+    maxTemp = 100
+    minTemp = 0
+   
     
     #Return heating to client
     def getCurrentHeatingTemp(self, request, context):
         response = heating_pb2.IntResponse()
         response.value = self.currentTemp
+        return response
+    
+    def setHeatingTemp(self, request, context):
+        # change the current system temperature setting and respond to user
+        response = heating_pb2.StringResponse()
+        if self.minTemp > request.value:
+            print("Temperature too low")
+        elif self.maxTemp < request.value:
+            print("Temperature too high")
+        else:
+            print("Temperature updated to " + str(request.value))
         return response
     
     
