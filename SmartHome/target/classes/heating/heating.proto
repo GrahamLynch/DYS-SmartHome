@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package heating;
+
+service HeatingService{
+
+rpc setHeatingTemp(IntRequest) returns (StringResponse);
+rpc getCurrentHeatingTemp(Empty) returns (IntResponse);
+}
+
+message StringResponse{
+	string text = 1;
+}
+
+message IntResponse{
+	int32 value = 1;
+}
+
+message IntRequest{
+    int32 value = 1;
+}
+
+message Empty{}
