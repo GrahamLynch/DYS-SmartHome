@@ -48,13 +48,13 @@ public class LightingServer extends LightingServiceImplBase {
 	    		    int port = 50055;
 	    		    
 
-	    		// portNumber= 50055;
+	    	
 	    		    Server server = ServerBuilder.forPort(event.getInfo().getPort())
 	    		        .addService(lightingServer)
 	    		        .build()
 	    		        .start();
 
-	    		    logger.info("Lighting Server started, listening on " + port);
+	    		    logger.info("Lightning server started, listening on " + port);
 	    		   
 
 	    		    server.awaitTermination();

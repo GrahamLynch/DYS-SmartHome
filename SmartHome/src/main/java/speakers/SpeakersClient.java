@@ -11,7 +11,7 @@ public class SpeakersClient{
 	
 	public static void main (String args[]) {
 		
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50055).usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50057).usePlaintext().build();
 
 		//stubs -- generate from proto
 		blockingStub = SpeakersServiceGrpc.newBlockingStub(channel);

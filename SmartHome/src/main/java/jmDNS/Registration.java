@@ -16,8 +16,12 @@ public class Registration{
             JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
 
             // Register a service
-            ServiceInfo serviceInfo = ServiceInfo.create("_http._tcp.local.", "example", 50055, "path=index.html");
-            jmdns.registerService(serviceInfo);
+            ServiceInfo lightning = ServiceInfo.create("_http._tcp.local.", "example", 50055, "path=index.html");
+            ServiceInfo smarttv = ServiceInfo.create("_http._tcp.local.", "example", 50056, "path=index.html");
+            ServiceInfo speakers = ServiceInfo.create("_http._tcp.local.", "example", 50057, "path=index.html");
+            jmdns.registerService(lightning);
+            jmdns.registerService(smarttv);
+            jmdns.registerService(speakers);
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
