@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 import javax.swing.JButton;
@@ -144,15 +145,22 @@ public class speakersview extends JFrame {
  // TURN ON SPEAKERS
     public void turnOnSpeakers(){
         StringResponse response = blockingStub.turnOnSpeakers(null);
+        try {
+        	 turnOnSpeakersTextField.append(response.getText());
+        }catch(StatusRuntimeException e) {
+        	System.out.print(e.getStatus());
+        }
         
-        turnOnSpeakersTextField.append(response.getText());
     }
     
  // TURN OFF SPEAKERS
     public void turnOffSpeakers() {
         StringResponse response = blockingStub.turnOffSpeakers(null);
-        
-        turnOffSpeakersTextField.append(response.getText());
+        try {
+       	 turnOffSpeakersTextField.append(response.getText());
+       }catch(StatusRuntimeException e) {
+       	System.out.print(e.getStatus());
+       }
     }
     
 }

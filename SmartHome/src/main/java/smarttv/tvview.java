@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 import java.awt.Color;
@@ -33,7 +34,7 @@ public class tvview extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50060).usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50057).usePlaintext().build();
 
 		//stubs -- generate from proto
 		blockingStub = SmartTvServiceGrpc.newBlockingStub(channel);
@@ -106,14 +107,22 @@ public class tvview extends JFrame {
     public void turnOnTV(){
         StringResponse response = blockingStub.turnOnTv(null);
         System.out.print(response.getText());
+        try {
         turnOnTextArea.append(response.getText());
+        }catch(StatusRuntimeException e) {
+        	System.out.print(e.getStatus());
+        }
     }
     
     // TURN OFF TV
     public void turnOffTV(){
         StringResponse response = blockingStub.turnOffTv(null);
         System.out.print(response.getText());
-        turnOffTextArea.append(response.getText());
+        try {
+            turnOffTextArea.append(response.getText());
+            }catch(StatusRuntimeException e) {
+            	System.out.print(e.getStatus());
+            }
     }
     
     public static void connectToWifi() {

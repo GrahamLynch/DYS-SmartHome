@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 
 import java.awt.Color;
 import javax.swing.JTextArea;
@@ -79,6 +80,10 @@ public class heatingview extends JFrame {
 	public void getCurrentHeatingTemp() throws io.grpc.StatusRuntimeException{
         IntResponse response = blockingStub.getCurrentHeatingTemp(null);
         System.out.print(response.getValue());
+        try {
         currentHeatingTempTextArea.append("" + response.getValue());
+        }catch(StatusRuntimeException e) {
+        	System.out.print(e.getStatus());
+        }
     }
 }

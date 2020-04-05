@@ -6,10 +6,14 @@ import java.net.InetAddress;
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
 
+import speakers.Speakers;
+
 public class Registration{
 	
 	
 	public static void main(String[] args) throws InterruptedException {
+		
+		
 
         try {
             // Create a JmDNS instance

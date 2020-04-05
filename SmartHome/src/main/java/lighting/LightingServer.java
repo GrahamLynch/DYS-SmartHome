@@ -29,7 +29,7 @@ public class LightingServer extends LightingServiceImplBase {
 	
 	 private static class SampleListener implements ServiceListener {
 	        public void serviceAdded(ServiceEvent event) {
-	            System.out.println("Service addedPORT?: " + event.getInfo().getPort());
+	            System.out.println("Service added: " + event.getInfo().getPort());
 
 	        }
 

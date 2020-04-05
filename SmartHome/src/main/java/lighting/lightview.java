@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -33,7 +34,7 @@ public class lightview extends JFrame {
 	 */
 	public static void main(String[] args) {
 		
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50055).usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50056).usePlaintext().build();
 
 		//stubs -- generate from proto
 		blockingStub = LightingServiceGrpc.newBlockingStub(channel);
@@ -109,22 +110,33 @@ public class lightview extends JFrame {
     public void turnOnLights() throws io.grpc.StatusRuntimeException{
         StringResponse response = blockingStub.turnOnLights(null);
         System.out.print(response.getText());
+        try {
         lightsOnTextArea.append(response.getText());
-        
+        }catch(StatusRuntimeException e) {
+        	System.out.print(e.getStatus());
+        }
     }
     
  // TURN OFF LIGHTS
     public void turnOffLights() throws io.grpc.StatusRuntimeException{
         StringResponse response = blockingStub.turnOffLights(null);
         System.out.print(response.getText());
+        try {
         lightsOffTextArea.append(response.getText());
+        }catch(StatusRuntimeException e) {
+        	System.out.print(e.getStatus());
+        }
     }
     
     // CHANGE LIGHTS COLOUR
     public void changeLightColour() throws io.grpc.StatusRuntimeException{
         StringResponse response = blockingStub.changeLightColour(null);
         System.out.print(response.getText());
+        try {
         colourTextArea.append(response.getText());
+        }catch(StatusRuntimeException e) {
+        	System.out.print(e.getStatus());
+        }
         
     }
 

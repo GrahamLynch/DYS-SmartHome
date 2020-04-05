@@ -4,7 +4,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 import smarttv.SmartTvServiceGrpc.SmartTvServiceImplBase;
@@ -24,7 +24,7 @@ public class SmartTvServer extends SmartTvServiceImplBase {
 	
 	private static class SampleListener implements ServiceListener {
         public void serviceAdded(ServiceEvent event) {
-            System.out.println("Service addedPORT?: " + event.getInfo().getPort());
+            System.out.println("Service added: " + event.getInfo().getPort());
 
         }
 
@@ -95,7 +95,11 @@ public class SmartTvServer extends SmartTvServiceImplBase {
 	            .setText(tvResponse)
 	            .build();
 		responseObserver.onNext(response);
+		try {
 		responseObserver.onCompleted();
+		}catch(StatusRuntimeException e){
+			System.out.print(e.getStatus());
+		}
 	}
 	
 	public void turnOffTv(final Empty request,final StreamObserver<StringResponse> responseObserver) {
@@ -106,7 +110,11 @@ public class SmartTvServer extends SmartTvServiceImplBase {
 	            .setText(tvResponse)
 	            .build();
 		responseObserver.onNext(response);
-		responseObserver.onCompleted();
+		try {
+			responseObserver.onCompleted();
+			}catch(StatusRuntimeException e){
+				System.out.print(e.getStatus());
+			}
 	}
 	
 	
@@ -128,7 +136,11 @@ public class SmartTvServer extends SmartTvServiceImplBase {
 			}
 			responseObserver.onNext(StringResponse.newBuilder().setText("Wifi Connected").build());
 		 
-		 responseObserver.onCompleted();
+			try {
+				responseObserver.onCompleted();
+				}catch(StatusRuntimeException e){
+					System.out.print(e.getStatus());
+				}
 	}
 
 	

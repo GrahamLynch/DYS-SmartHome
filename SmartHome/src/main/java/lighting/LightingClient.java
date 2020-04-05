@@ -68,7 +68,7 @@ public class LightingClient{
 
 			@Override
 			public void onError(Throwable t) {
-				// TODO Auto-generated method stub
+				t.printStackTrace();
 				
 			}
 

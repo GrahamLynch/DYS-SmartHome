@@ -3,6 +3,7 @@ package speakers;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 import speakers.SpeakersServiceGrpc.SpeakersServiceImplBase;
@@ -21,7 +22,7 @@ public class SpeakersServer extends SpeakersServiceImplBase {
 	
 	 private static class SampleListener implements ServiceListener {
 	        public void serviceAdded(ServiceEvent event) {
-	            System.out.println("Service addedPORT?: " + event.getInfo().getPort());
+	            System.out.println("Service added: " + event.getInfo().getPort());
 
 	        }
 
@@ -94,7 +95,11 @@ public class SpeakersServer extends SpeakersServiceImplBase {
 	            .setText(speakerResponse)
 	            .build();
 		responseObserver.onNext(response);
-		responseObserver.onCompleted();
+		try {
+			responseObserver.onCompleted();
+			}catch(StatusRuntimeException e){
+				System.out.print(e.getStatus());
+			}
 	}
 	
 	public void turnOffSpeakers(final Empty request,final StreamObserver<StringResponse> responseObserver) {
@@ -105,7 +110,11 @@ public class SpeakersServer extends SpeakersServiceImplBase {
 	            .setText(speakerResponse)
 	            .build();
 		responseObserver.onNext(response);
-		responseObserver.onCompleted();
+		try {
+			responseObserver.onCompleted();
+			}catch(StatusRuntimeException e){
+				System.out.print(e.getStatus());
+			}
 	}
 	
 	@Override
