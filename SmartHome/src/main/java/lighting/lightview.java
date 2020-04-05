@@ -23,7 +23,10 @@ public class lightview extends JFrame {
     static JTextArea lightsOnTextArea = new JTextArea();
 
 	private JPanel contentPane;
-	private JButton btnNewButton;
+	private JButton lightsOffButton;
+	private JTextArea lightsOffTextArea;
+	private JButton changeColourButton;
+	private JTextArea colourTextArea;
 
 	/**
 	 * Launch the application.
@@ -72,13 +75,30 @@ public class lightview extends JFrame {
 		lightsOnButton.setBounds(275, 83, 208, 29);
 		contentPane.add(lightsOnButton);
 		
-		btnNewButton = new JButton("Turn off lights!");
-		btnNewButton.addActionListener(new ActionListener() {
+		lightsOffButton = new JButton("Turn off lights!");
+		lightsOffButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				turnOffLights();
+			}
+		});
+		lightsOffButton.setBounds(275, 274, 205, 29);
+		contentPane.add(lightsOffButton);
+		
+		lightsOffTextArea = new JTextArea();
+		lightsOffTextArea.setBounds(229, 365, 303, 35);
+		contentPane.add(lightsOffTextArea);
+		
+		changeColourButton = new JButton("Change colour of lights!");
+		changeColourButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(275, 483, 205, 29);
-		contentPane.add(btnNewButton);
+		changeColourButton.setBounds(240, 466, 275, 29);
+		contentPane.add(changeColourButton);
+		
+		colourTextArea = new JTextArea();
+		colourTextArea.setBounds(234, 542, 298, 35);
+		contentPane.add(colourTextArea);
 	}
 	
 	
@@ -91,6 +111,20 @@ public class lightview extends JFrame {
         System.out.print(response.getText());
         lightsOnTextArea.append(response.getText());
         
+    }
+    
+ // TURN OFF LIGHTS
+    public void turnOffLights() throws io.grpc.StatusRuntimeException{
+        StringResponse response = blockingStub.turnOffLights(null);
+        System.out.print(response.getText());
+        lightsOffTextArea.append(response.getText());
+    }
+    
+    // CHANGE LIGHTS COLOUR
+    public void changeLightColour() throws io.grpc.StatusRuntimeException{
+        StringResponse response = blockingStub.changeLightColour(null);
+        System.out.print(response.getText());
+        colourTextArea.append(response.getText());
         
     }
 

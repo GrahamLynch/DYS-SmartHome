@@ -20,7 +20,7 @@ public class SmartTvServer extends SmartTvServiceImplBase {
 	private static final Logger logger = Logger.getLogger(SmartTvServer.class.getName());
 	public static void main(final String args[]) throws IOException , InterruptedException {
 	SmartTvServer smarttvserver = new SmartTvServer();
-	int port = 50052;
+	int port = 50060;
 	
     Server server = ServerBuilder.forPort(port)
 	        .addService(smarttvserver)

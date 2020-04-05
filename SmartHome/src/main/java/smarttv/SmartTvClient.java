@@ -25,7 +25,7 @@ public class SmartTvClient{
 	
 	
 	public static void main (String args[]) throws Exception {
-    	ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052).usePlaintext().build();
+    	ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50060).usePlaintext().build();
 
 		//stubs -- generate from proto
 		blockingStub = SmartTvServiceGrpc.newBlockingStub(channel);

@@ -21,14 +21,14 @@ public class HeatingClient{
 		 setHeatingTemp(40);
 	 }
 	 
-	//get the systems current temperature setting
+	
 	    public static int getCurrentHeatingTemp() throws io.grpc.StatusRuntimeException{
 	        IntResponse response = blockingStub.getCurrentHeatingTemp(null);
 	        System.out.print(response.getValue());
 	        return response.getValue();
 	    }
 	    
-	  //change the systems temperature setting
+	
 	    public static void setHeatingTemp(int value) throws io.grpc.StatusRuntimeException{
 	        IntRequest request = IntRequest.newBuilder().setValue(value).build();
 	        blockingStub.setHeatingTemp(request);

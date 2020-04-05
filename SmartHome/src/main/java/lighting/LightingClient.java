@@ -26,10 +26,10 @@ public class LightingClient{
 		asyncStub = LightingServiceGrpc.newStub(channel);
 		
 		
-		turnOnLights();
-		turnOffLights();
+		//turnOnLights();
+		//turnOffLights();
 		changeLightingLevel();
-		changeLightColour();
+		//changeLightColour();
 	
 
     }
@@ -50,7 +50,7 @@ public class LightingClient{
         return response.getText();
     }
     
-    // TURN ON LIGHTS
+    // CHANGE LIGHTS COLOUR
     public static String changeLightColour() throws io.grpc.StatusRuntimeException{
         StringResponse response = blockingStub.changeLightColour(null);
         System.out.print(response.getText());
